@@ -1,0 +1,24 @@
+<?php
+
+class Insegnante
+{
+    private static int $register = 0;// static non appartiene all'oggetto ma alla classe
+    public function __construct(private string $name, private string $lastName)
+    {
+        self::$register++;
+    }
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function getLastName(): string
+    {
+        return $this->lastName;
+    }
+    public static function getRegister():int
+    {
+        return self::$register;
+    }
+}
